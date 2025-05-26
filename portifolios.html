@@ -1,89 +1,477 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio | Avante Projectos & Construções Lda</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólios - Avante Projectos & Construções</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .portfolio-section {
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 1rem;
+            background: white;
+        }
+
+        .portfolio-info h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .portfolio-info p {
+            margin: 0.5rem 0 0;
+            color: #666;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .portfolio-nav {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-nav h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .portfolio-nav ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .portfolio-nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #666;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-nav a:hover {
+            background: #8e44ad;
+            color: white;
+        }
+
+        /* Estilos para o álbum */
+        .album-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
+        .album-content {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .album-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .album-title {
+            margin: 0;
+            color: #333;
+        }
+
+        .album-close {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .album-item {
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .album-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .album-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .album-description {
+            padding: 1rem;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
     <nav class="navbar">
-      <ul>
-        <li><a href="index.html#empresa">Empresa</a></li>
-        <li><a href="index.html#servicos">Serviços</a></li>
-        <li><a href="index.html#sobre-nos">Sobre nós</a></li>
-        <li><a href="index.html#informacoes">Informações</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
-        <li><a href="portfolios.html">Portfólio</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#sobre-nos">Sobre nós</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
     </nav>
+
     <div class="container">
-      <main>
-        <section class="portfolio">
-          <h3>Portfólio</h3>
-          <div class="portfolio-folder-list">
-            <details class="portfolio-folder">
-              <summary>Projeto 1</summary>
-              <div class="album">
-                <img
-                  src="images/projeto1-1.jpg"
-                  alt="Projeto 1 - Foto 1"
-                  class="album-img"
-                />
-                <img
-                  src="images/projeto1-2.jpg"
-                  alt="Projeto 1 - Foto 2"
-                  class="album-img"
-                />
-                <img
-                  src="images/projeto1-3.jpg"
-                  alt="Projeto 1 - Foto 3"
-                  class="album-img"
-                />
-              </div>
-              <p>Descrição do Projeto 1</p>
-            </details>
-            <details class="portfolio-folder">
-              <summary>Projeto 2</summary>
-              <div class="album">
-                <img
-                  src="images/projeto2-1.jpg"
-                  alt="Projeto 2 - Foto 1"
-                  class="album-img"
-                />
-                <img
-                  src="images/projeto2-2.jpg"
-                  alt="Projeto 2 - Foto 2"
-                  class="album-img"
-                />
-              </div>
-              <p>Descrição do Projeto 2</p>
-            </details>
-            <!-- Adicione mais projetos conforme necessário -->
-          </div>
-        </section>
-      </main>
+        <main>
+            <div class="portfolio-nav">
+                <h2>Navegação Rápida</h2>
+                <ul>
+                    <li><a href="#instalacao-electrica">Instalação Eléctrica</a></li>
+                    <li><a href="#arquitectura">Arquitetura</a></li>
+                    <li><a href="#engenharia">Engenharia</a></li>
+                    <li><a href="#aluguer">Aluguer de Equipamentos</a></li>
+                    <li><a href="#gestao-edificios">Gestão de Edifícios</a></li>
+                    <li><a href="#climatizacao">Climatização</a></li>
+                    <li><a href="#hidraulica">Hidráulica</a></li>
+                    <li><a href="#manutencao">Manutenção</a></li>
+                </ul>
+            </div>
+
+            <section id="instalacao-electrica" class="portfolio-section">
+                <h2>Portfólio - Instalação Eléctrica</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="electrica1">
+                        <img src="images/portfolio/electrica/projeto1.jpg" alt="Projeto de Instalação Elétrica">
+                        <div class="portfolio-info">
+                            <h3>Projeto Residencial</h3>
+                            <p>Instalação elétrica completa em residência de alto padrão</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="arquitectura" class="portfolio-section">
+                <h2>Portfólio - Arquitetura</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="arquitetura1">
+                        <img src="images/portfolio/arquitetura/projeto1.jpg" alt="Projeto de Arquitetura">
+                        <div class="portfolio-info">
+                            <h3>Projeto Comercial</h3>
+                            <p>Design de espaço comercial moderno</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="engenharia" class="portfolio-section">
+                <h2>Portfólio - Engenharia</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="engenharia1">
+                        <img src="images/portfolio/engenharia/projeto1.jpg" alt="Projeto de Engenharia">
+                        <div class="portfolio-info">
+                            <h3>Projeto Estrutural</h3>
+                            <p>Análise e projeto estrutural de edificação</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aluguer" class="portfolio-section">
+                <h2>Portfólio - Aluguer de Equipamentos</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="aluguer1">
+                        <img src="images/portfolio/aluguer/projeto1.jpg" alt="Equipamentos de Construção">
+                        <div class="portfolio-info">
+                            <h3>Equipamentos Disponíveis</h3>
+                            <p>Frota completa de equipamentos para construção</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gestao-edificios" class="portfolio-section">
+                <h2>Portfólio - Gestão de Edifícios</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="gestao1">
+                        <img src="images/portfolio/gestao-edificios/projeto1.jpg" alt="Gestão de Edifícios">
+                        <div class="portfolio-info">
+                            <h3>Projeto de Gestão</h3>
+                            <p>Gestão completa de complexo comercial</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="climatizacao" class="portfolio-section">
+                <h2>Portfólio - Climatização e Refrigeração</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="climatizacao1">
+                        <img src="images/portfolio/climatizacao/projeto1.jpg" alt="Projeto de Climatização">
+                        <div class="portfolio-info">
+                            <h3>Sistema AVAC</h3>
+                            <p>Instalação de sistema de climatização central</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hidraulica" class="portfolio-section">
+                <h2>Portfólio - Hidráulica</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="hidraulica1">
+                        <img src="images/portfolio/hidraulica/projeto1.jpg" alt="Projeto Hidráulico">
+                        <div class="portfolio-info">
+                            <h3>Projeto Hidráulico</h3>
+                            <p>Instalação hidráulica completa</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="manutencao" class="portfolio-section">
+                <h2>Portfólio - Manutenção e Reabilitação</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-album="manutencao1">
+                        <img src="images/portfolio/manutencao/projeto1.jpg" alt="Projeto de Manutenção">
+                        <div class="portfolio-info">
+                            <h3>Reabilitação</h3>
+                            <p>Reabilitação completa de edificação</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal do Álbum -->
+        <div id="albumModal" class="album-modal">
+            <div class="album-content">
+                <div class="album-header">
+                    <h2 class="album-title">Álbum do Projeto</h2>
+                    <span class="album-close">&times;</span>
+                </div>
+                <div class="album-grid" id="albumGrid">
+                    <!-- As imagens do álbum serão inseridas aqui via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" src="" alt="Imagem ampliada">
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Avante Projectos & Construções Lda. Todos os direitos reservados.</p>
+        </footer>
     </div>
-    <!-- Lightbox container (copie igual ao index) -->
-    <div id="lightbox" class="lightbox">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-content" id="lightbox-img" src="" alt="ampliada" />
-    </div>
+
     <script>
-      // Abrir lightbox ao clicar na imagem
-      document.querySelectorAll(".album-img").forEach((img) => {
-        img.addEventListener("click", function () {
-          document.getElementById("lightbox-img").src = this.src;
-          document.getElementById("lightbox").style.display = "flex";
+        // Dados dos álbuns
+        const albums = {
+            'electrica1': {
+                title: 'Projeto Residencial - Instalação Elétrica',
+                images: [
+                    { src: 'images/portfolio/electrica/projeto1.jpg', alt: 'Vista geral da instalação' },
+                    { src: 'images/portfolio/electrica/projeto1-2.jpg', alt: 'Detalhe do quadro elétrico' },
+                    { src: 'images/portfolio/electrica/projeto1-3.jpg', alt: 'Instalação em andamento' }
+                ]
+            },
+            'arquitetura1': {
+                title: 'Projeto Comercial - Arquitetura',
+                images: [
+                    { src: 'images/portfolio/arquitetura/projeto1.jpg', alt: 'Fachada do projeto' },
+                    { src: 'images/portfolio/arquitetura/projeto1-2.jpg', alt: 'Interior do espaço' },
+                    { src: 'images/portfolio/arquitetura/projeto1-3.jpg', alt: 'Detalhes do projeto' }
+                ]
+            },
+            'engenharia1': {
+                title: 'Projeto Estrutural - Engenharia',
+                images: [
+                    { src: 'images/portfolio/engenharia/projeto1.jpg', alt: 'Análise estrutural' },
+                    { src: 'images/portfolio/engenharia/projeto1-2.jpg', alt: 'Detalhes técnicos' },
+                    { src: 'images/portfolio/engenharia/projeto1-3.jpg', alt: 'Implementação' }
+                ]
+            },
+            'aluguer1': {
+                title: 'Equipamentos Disponíveis - Aluguer',
+                images: [
+                    { src: 'images/portfolio/aluguer/projeto1.jpg', alt: 'Equipamentos pesados' },
+                    { src: 'images/portfolio/aluguer/projeto1-2.jpg', alt: 'Ferramentas especializadas' },
+                    { src: 'images/portfolio/aluguer/projeto1-3.jpg', alt: 'Equipamentos de medição' }
+                ]
+            },
+            'gestao1': {
+                title: 'Gestão de Complexo Comercial',
+                images: [
+                    { src: 'images/portfolio/gestao-edificios/projeto1.jpg', alt: 'Vista do complexo' },
+                    { src: 'images/portfolio/gestao-edificios/projeto1-2.jpg', alt: 'Sistemas de gestão' },
+                    { src: 'images/portfolio/gestao-edificios/projeto1-3.jpg', alt: 'Áreas comuns' }
+                ]
+            },
+            'climatizacao1': {
+                title: 'Sistema AVAC - Climatização',
+                images: [
+                    { src: 'images/portfolio/climatizacao/projeto1.jpg', alt: 'Unidade central' },
+                    { src: 'images/portfolio/climatizacao/projeto1-2.jpg', alt: 'Sistema de distribuição' },
+                    { src: 'images/portfolio/climatizacao/projeto1-3.jpg', alt: 'Controles' }
+                ]
+            },
+            'hidraulica1': {
+                title: 'Projeto Hidráulico',
+                images: [
+                    { src: 'images/portfolio/hidraulica/projeto1.jpg', alt: 'Sistema principal' },
+                    { src: 'images/portfolio/hidraulica/projeto1-2.jpg', alt: 'Instalações sanitárias' },
+                    { src: 'images/portfolio/hidraulica/projeto1-3.jpg', alt: 'Detalhes da instalação' }
+                ]
+            },
+            'manutencao1': {
+                title: 'Reabilitação de Edificação',
+                images: [
+                    { src: 'images/portfolio/manutencao/projeto1.jpg', alt: 'Estado inicial' },
+                    { src: 'images/portfolio/manutencao/projeto1-2.jpg', alt: 'Processo de reabilitação' },
+                    { src: 'images/portfolio/manutencao/projeto1-3.jpg', alt: 'Resultado final' }
+                ]
+            }
+        };
+
+        // Função para abrir o álbum
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const albumId = this.dataset.album;
+                if (albums[albumId]) {
+                    const album = albums[albumId];
+                    document.querySelector('.album-title').textContent = album.title;
+
+                    const albumGrid = document.getElementById('albumGrid');
+                    albumGrid.innerHTML = '';
+
+                    album.images.forEach(image => {
+                        const div = document.createElement('div');
+                        div.className = 'album-item';
+                        div.innerHTML = `
+                            <img src="${image.src}" alt="${image.alt}">
+                            <div class="album-description">
+                                <p>${image.alt}</p>
+                            </div>
+                        `;
+                        albumGrid.appendChild(div);
+                    });
+
+                    document.getElementById('albumModal').style.display = 'block';
+                }
+            });
         });
-      });
-      // Fechar lightbox ao clicar no X ou fora da imagem
-      document.querySelector(".lightbox-close").onclick = function () {
-        document.getElementById("lightbox").style.display = "none";
-      };
-      document.getElementById("lightbox").onclick = function (e) {
-        if (e.target === this) this.style.display = "none";
-      };
+
+        // Fechar o álbum
+        document.querySelector('.album-close').onclick = function () {
+            document.getElementById('albumModal').style.display = 'none';
+        };
+
+        // Fechar o álbum ao clicar fora
+        document.getElementById('albumModal').onclick = function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        };
+
+        // Função para abrir o lightbox
+        document.querySelectorAll('.portfolio-item img, .album-item img').forEach(img => {
+            img.addEventListener('click', function (e) {
+                e.stopPropagation(); // Evita que o clique na imagem abra o álbum
+                document.getElementById('lightbox-img').src = this.src;
+                document.getElementById('lightbox').style.display = 'flex';
+            });
+        });
+
+        // Função para fechar o lightbox
+        document.querySelector('.lightbox-close').onclick = function () {
+            document.getElementById('lightbox').style.display = 'none';
+        };
+
+        document.getElementById('lightbox').onclick = function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        };
     </script>
-  </body>
+</body>
+
 </html>

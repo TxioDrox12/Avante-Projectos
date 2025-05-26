@@ -3,13 +3,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #f8f9fa;
   color: #333;
+  line-height: 1.6;
 }
+
 .logo-grid {
   display: flex;
   gap: 16px; /* Espaçamento entre as imagens */
@@ -29,33 +31,43 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(142, 68, 173, 0.1);
 }
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #8e44ad;
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
+
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   list-style: none;
   margin: 0;
-  padding: 10px 0;
+  padding: 15px 0;
 }
+
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
+
 .navbar a:hover {
-  color: #25d366;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
 }
+
 .container {
   margin-top: 60px; /* Para não ficar atrás do menu fixo */
 }
@@ -134,72 +146,105 @@ main {
 /* Estilos da seção empresa */
 .empresa {
   grid-column: 1 / 2;
-  background-color: #8e44ad;
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
   color: white;
-  padding: 30px;
-  border-radius: 5px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(142, 68, 173, 0.2);
 }
 
 .empresa-info h1 {
-  font-size: 28px;
-  margin-bottom: 15px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .empresa-info hr {
-  width: 50px;
-  border: 2px solid white;
-  margin: 15px 0;
+  width: 80px;
+  border: 3px solid white;
+  margin: 20px 0;
+  opacity: 0.8;
 }
 
 .empresa-info h2 {
-  font-size: 24px;
-  margin-top: 20px;
+  font-size: 26px;
+  margin-top: 25px;
+  font-weight: 500;
 }
 
 /* Estilos da seção serviços */
 .servicos {
   grid-column: 1 / 2;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 5px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(142, 68, 173, 0.1);
 }
 
 .servicos h3 {
-  background-color: #8e44ad;
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
   color: white;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 26px;
+  box-shadow: 0 4px 15px rgba(142, 68, 173, 0.2);
 }
 
 .servicos ul {
   list-style-type: none;
+  display: grid;
+  gap: 15px;
 }
 
 .servicos li {
-  margin-bottom: 10px;
-  padding-left: 20px;
-  position: relative;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border: 1px solid rgba(142, 68, 173, 0.1);
 }
 
-.servicos li::before {
-  content: "•";
-  color: #8e44ad;
-  font-size: 20px;
-  position: absolute;
-  left: 0;
-  top: -2px;
+.servicos li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(142, 68, 173, 0.15);
+  background-color: #fff;
+  border-color: rgba(142, 68, 173, 0.2);
 }
 
-.servicos a {
+.servicos li a {
   color: #333;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.servicos a:hover {
-  color: #8e44ad;
-  text-decoration: underline;
+.servicos li a:hover {
+  color: #007bff;
+}
+
+.link-portfolio-servico {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(142, 68, 173, 0.2);
+}
+
+.link-portfolio-servico:hover {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(142, 68, 173, 0.3);
 }
 
 /* Estilos da seção sobre nós */
@@ -300,34 +345,35 @@ main {
 
 /* Estilos do rodapé */
 footer {
-  background-color: #333;
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
   color: white;
   text-align: center;
-  padding: 15px;
-  font-size: 14px;
+  padding: 30px 15px;
+  font-size: 15px;
+  margin-top: 40px;
 }
 
 /* Estilos dos ícones sociais */
 .social-icons {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .social-icons a {
   display: inline-block;
-  margin: 0 8px;
-  transition: transform 0.2s;
+  margin: 0 12px;
+  transition: all 0.3s ease;
 }
 
 .social-icons img {
-  width: 28px;
-  height: 28px;
-  filter: grayscale(1);
-  transition: filter 0.2s, transform 0.2s;
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover img {
-  filter: none;
-  transform: scale(1.15);
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1) invert(0);
 }
 
 /* Estilos da seção depoimentos */
@@ -536,6 +582,29 @@ footer {
   .form-contato button:hover {
     background: #25d366;
   }
+
+  .servicos {
+    padding: 15px;
+  }
+
+  .servicos h3 {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .servicos li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .servicos a {
+    font-size: 14px;
+  }
+
+  .link-portfolio-servico {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 html {
@@ -671,4 +740,245 @@ html {
   align-items: flex-start;
   margin: 40px 0 60px 0;
   flex-wrap: wrap;
+}
+
+.carrossel-estatico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(142, 68, 173, 0.15);
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .carrossel-estatico {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 40px 0;
+  }
+}
+
+.carrossel-estatico img {
+  width: 280px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(142, 68, 173, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carrossel-estatico img:hover {
+  transform: scale(1.02);
+}
+
+.carrossel-seta {
+  background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(142, 68, 173, 0.2);
+}
+
+.carrossel-seta:hover {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(142, 68, 173, 0.3);
+}
+
+/* Estilos do Portfólio */
+.portfolio-section {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: 1rem;
+    background: white;
+}
+
+.portfolio-info h3 {
+    margin: 0;
+    color: #333;
+}
+
+.portfolio-info p {
+    margin: 0.5rem 0 0;
+    color: #666;
+}
+
+/* Navegação do Portfólio */
+.portfolio-nav {
+    background: #f8f9fa;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.portfolio-nav h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.portfolio-nav ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.portfolio-nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #666;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-nav a:hover {
+    background: #8e44ad;
+    color: white;
+}
+
+/* Estilos do Álbum */
+.album-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.album-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.album-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.album-title {
+    margin: 0;
+    color: #333;
+}
+
+.album-close {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.album-item {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.album-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.album-item:hover img {
+    transform: scale(1.05);
+}
+
+.album-description {
+    padding: 1rem;
+    background: #f8f9fa;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }

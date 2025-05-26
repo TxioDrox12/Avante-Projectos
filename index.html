@@ -1,232 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avante Projectos & Construções Lda</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <ul>
-        <li><a href="#empresa">Empresa</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre-nos">Sobre nós</a></li>
-        <li><a href="#informacoes">Informações</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="portifolios.html">Portfólio</a></li>
-      </ul>
-    </nav>
-    <div class="container">
-      <!-- Cabeçalho com logo -->
-      <header>
-        <div class="logo">
-          <div class="logo-grid">
-            <div class="logo-item casa">
-              <img src="images/casa.png" alt="Casa" />
-            </div>
-            <div class="logo-item planta">
-              <img src="images/planta.png" alt="Planta" />
-            </div>
-            <div class="logo-item agua">
-              <img src="images/agua.png" alt="Água" />
-            </div>
-            <div class="logo-item lampada">
-              <img src="images/lampada.png" alt="Lâmpada" />
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avante Projectos & Construções Lda</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .link-portfolio-servico {
+      font-size: 13px;
+      color: #8e44ad;
+      text-decoration: underline dotted;
+      margin-left: 4px;
+      transition: color 0.2s;
+    }
+
+    .link-portfolio-servico:hover {
+      color: #25d366;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#empresa"><i class="fas fa-building"></i> Empresa</a></li>
+      <li><a href="#servicos"><i class="fas fa-tools"></i> Serviços</a></li>
+      <li><a href="#sobre-nos"><i class="fas fa-info-circle"></i> Sobre nós</a></li>
+      <li><a href="#informacoes"><i class="fas fa-file-alt"></i> Informações</a></li>
+      <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- Cabeçalho com logo -->
+    <header>
+      <div class="logo">
+        <div class="logo-grid">
+          <div class="logo-item casa">
+            <img src="images/casa.png" alt="Casa" />
           </div>
-          <div class="logo-text">
-            <h2>AVANTE</h2>
-            <h3>PROJECTOS &</h3>
-            <h3>CONSTRUÇÕES</h3>
-            <p class="slogan">
-              Projectando, Construindo e Mantendo o que você precisa
-            </p>
+          <div class="logo-item planta">
+            <img src="images/planta.png" alt="Planta" />
+          </div>
+          <div class="logo-item agua">
+            <img src="images/agua.png" alt="Água" />
+          </div>
+          <div class="logo-item lampada">
+            <img src="images/lampada.png" alt="Lâmpada" />
           </div>
         </div>
-      </header>
-
-      <!-- Conteúdo principal -->
-      <main>
-        <section id="empresa" class="empresa">
-          <div class="empresa-info">
-            <h1>Avante Projectos & Construções Lda</h1>
-            <hr />
-            <h2>Seu parceiro para o sucesso</h2>
-          </div>
-        </section>
-
-        <section id="servicos" class="servicos">
-          <div class="servicos-container">
-            <h3>Serviços</h3>
-            <ul>
-              <li>
-                <a href="servicos/instalacao-electrica.html"
-                  >Instalação Eléctrica</a
-                >
-              </li>
-              <li>
-                <a href="servicos/arquitectura.html"
-                  >Actividades de Arquitectura</a
-                >
-              </li>
-              <li>
-                <a href="servicos/engenharia.html">Actividades de Engenharia</a>
-              </li>
-              <li>
-                <a href="servicos/aluguer.html"
-                  >Aluguer de máquinas e equipamentos para construção e
-                  engenharia civil</a
-                >
-              </li>
-              <li>
-                <a href="servicos/gestao-edificios.html"
-                  >Actividades Combinadas de Apoio à Gestão de Edifícios</a
-                >
-              </li>
-              <li>
-                <a href="servicos/climatizacao.html"
-                  >Climatização e Refrigeração (AVAC)</a
-                >
-              </li>
-              <li><a href="servicos/hidraulica.html">Hidráulica</a></li>
-
-              <li>
-                <a href="servicos/manutencao.html">
-                  manutenção de imóveis e reabilitação
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="sobre-nos" class="sobre-nos">
-          <h3>Sobre nós</h3>
-          <p>
-            A Avante Projectos & Construções Lda é uma empresa moçambicana
-            sediada em Boane, Maputo, especializada em instalações eléctricas e
-            com atuação abrangente em arquitectura, engenharia, aluguer de
-            equipamentos para construção civil e gestão de edifícios. Com alvará
-            válido por tempo indeterminado e uma equipa técnica qualificada,
-            oferece soluções integradas e confiáveis para projetos de
-            construção, manutenção e apoio técnico, com compromisso com a
-            legalidade, segurança e sustentabilidade.
+        <div class="logo-text">
+          <h2>AVANTE</h2>
+          <h3>PROJECTOS &</h3>
+          <h3>CONSTRUÇÕES</h3>
+          <p class="slogan">
+            <i class="fas fa-star"></i> Projectando, Construindo e Mantendo o que você precisa <i
+              class="fas fa-star"></i>
           </p>
-        </section>
+        </div>
+      </div>
+    </header>
 
-        <section id="informacoes" class="informacoes">
-          <div class="info-empresa">
-            <h3>Informações Gerais da Empresa</h3>
-            <ul>
-              <li>NUIT: 401892850</li>
-              <li>Nº do Alvará: 3385/10/02/PS/2025</li>
-              <li>Data de Emissão: 07/03/ 2025</li>
-            </ul>
-          </div>
-        </section>
+    <!-- Conteúdo principal -->
+    <main>
+      <section id="empresa" class="empresa">
+        <div class="empresa-info">
+          <h1><i class="fas fa-building"></i> Avante Projectos & Construções Lda</h1>
+          <hr />
+          <h2>Seu parceiro para o sucesso</h2>
+        </div>
+      </section>
 
-        <section id="contacto" class="contacto">
-          <h3>Contacto</h3>
+      <section id="servicos" class="servicos">
+        <div class="servicos-container">
+          <h3><i class="fas fa-tools"></i> Serviços</h3>
           <ul>
             <li>
-              <img src="images/telefone.png" alt="Telefone" /> +258-845-912300
+              <a href="servicos/instalacao-electrica.html"><i class="fas fa-bolt"></i> Instalação Eléctrica</a>
+              <a href="portifolios.html#instalacao-electrica" class="link-portfolio-servico">Ver portfólio</a>
             </li>
             <li>
-              <img src="images/email.png" alt="Email" />
-              <a href="mailto:avanteprojectos@gmail.com"
-                >avanteprojectos@gmail.com</a
-              >
+              <a href="servicos/arquitectura.html"><i class="fas fa-drafting-compass"></i> Actividades de
+                Arquitectura</a>
+              <a href="portifolios.html#arquitectura" class="link-portfolio-servico">Ver portfólio</a>
             </li>
             <li>
-              <img src="images/website.png" alt="Website" />
-              <a href="http://www.avanteprojectos.com" target="_blank"
-                >www.avanteprojectos.com</a
-              >
+              <a href="servicos/engenharia.html"><i class="fas fa-cogs"></i> Actividades de Engenharia</a>
+              <a href="portifolios.html#engenharia" class="link-portfolio-servico">Ver portfólio</a>
+            </li>
+            <li>
+              <a href="servicos/aluguer.html"><i class="fas fa-truck"></i> Aluguer de máquinas e equipamentos para
+                construção e engenharia civil</a>
+              <a href="portifolios.html#aluguer" class="link-portfolio-servico">Ver portfólio</a>
+            </li>
+            <li>
+              <a href="servicos/gestao-edificios.html"><i class="fas fa-building"></i> Actividades Combinadas de Apoio à
+                Gestão de Edifícios</a>
+              <a href="portifolios.html#gestao-edificios" class="link-portfolio-servico">Ver portfólio</a>
+            </li>
+            <li>
+              <a href="servicos/climatizacao.html"><i class="fas fa-snowflake"></i> Climatização e Refrigeração
+                (AVAC)</a>
+              <a href="portifolios.html#climatizacao" class="link-portfolio-servico">Ver portfólio</a>
+            </li>
+            <li>
+              <a href="servicos/hidraulica.html"><i class="fas fa-tint"></i> Hidráulica</a>
+              <a href="portifolios.html#hidraulica" class="link-portfolio-servico">Ver portfólio</a>
+            </li>
+            <li>
+              <a href="servicos/manutencao.html"><i class="fas fa-wrench"></i> Manutenção de imóveis e reabilitação</a>
+              <a href="portifolios.html#manutencao" class="link-portfolio-servico">Ver portfólio</a>
             </li>
           </ul>
-        </section>
-
-        <section class="destaques-portfolio">
-          <div class="destaques-flex">
-            <div class="carrossel">
-              <div class="carrossel-container">
-                <div class="carrossel-slide">
-                  <img
-                    src="images/WhatsApp Image 2025-05-24 at 16.19.25_fd57c06c.jpg"
-                    alt="Projeto 1"
-                  />
-                </div>
-                <div class="carrossel-slide">
-                  <img
-                    src="images/WhatsApp Image 2025-05-24 at 16.19.28_e1f0dc4d.jpg"
-                    alt="Projeto 2"
-                  />
-                </div>
-                <div class="carrossel-slide">
-                  <img
-                    src="images/WhatsApp Image 2025-05-24 at 16.19.31_6c3d4654.jpg"
-                    alt="Projeto 3"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Lightbox container -->
-        <div id="lightbox" class="lightbox">
-          <span class="lightbox-close">&times;</span>
-          <img
-            class="lightbox-content"
-            id="lightbox-img"
-            src=""
-            alt="ampliada"
-          />
         </div>
-      </main>
+      </section>
 
-      <footer>
+      <section id="sobre-nos" class="sobre-nos">
+        <h3><i class="fas fa-info-circle"></i> Sobre nós</h3>
         <p>
-          &copy; 2025 Avante Projectos & Construções Lda. Todos os direitos
-          reservados.
+          A Avante Projectos & Construções Lda é uma empresa moçambicana
+          sediada em Boane, Maputo, especializada em instalações eléctricas e
+          com atuação abrangente em arquitectura, engenharia, aluguer de
+          equipamentos para construção civil e gestão de edifícios. Com alvará
+          válido por tempo indeterminado e uma equipa técnica qualificada,
+          oferece soluções integradas e confiáveis para projetos de
+          construção, manutenção e apoio técnico, com compromisso com a
+          legalidade, segurança e sustentabilidade.
         </p>
-        <div class="social-icons">
-          <a
-            href="https://www.instagram.com/avanteprojectos"
-            target="_blank"
-            title="Instagram"
-          >
-            <img
-              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-              alt="Instagram"
-            />
-          </a>
-          <a href="https://wa.me/258845912300" target="_blank" title="WhatsApp">
-            <img
-              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-              alt="WhatsApp"
-            />
-          </a>
-          <!-- Adicione outros ícones se desejar -->
-        </div>
-      </footer>
-    </div>
+      </section>
 
-    <script>
-      // Abrir lightbox ao clicar na imagem
-      document.querySelectorAll(".album-img").forEach((img) => {
-        img.addEventListener("click", function () {
-          document.getElementById("lightbox-img").src = this.src;
-          document.getElementById("lightbox").style.display = "flex";
-        });
+      <section id="informacoes" class="informacoes">
+        <div class="info-empresa">
+          <h3><i class="fas fa-file-alt"></i> Informações Gerais da Empresa</h3>
+          <ul>
+            <li><i class="fas fa-id-card"></i> NUIT: 401892850</li>
+            <li><i class="fas fa-file-signature"></i> Nº do Alvará: 3385/10/02/PS/2025</li>
+            <li><i class="fas fa-calendar-alt"></i> Data de Emissão: 07/03/ 2025</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contacto" class="contacto">
+        <h3><i class="fas fa-envelope"></i> Contacto</h3>
+        <ul>
+          <li>
+            <i class="fas fa-phone"></i> +258-845-912300
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:avanteprojectos@gmail.com">avanteprojectos@gmail.com</a>
+          </li>
+          <li>
+            <i class="fas fa-globe"></i>
+            <a href="http://www.avanteprojectos.com" target="_blank">www.avanteprojectos.com</a>
+          </li>
+        </ul>
+      </section>
+
+      <div style="position: relative; height: 240px;">
+        <section class="carrossel-estatico">
+          <button class="carrossel-seta" id="prev"><i class="fas fa-chevron-left"></i></button>
+          <img id="carrossel-img" src="images/WhatsApp Image 2025-05-24 at 16.19.25_fd57c06c.jpg" alt="Projeto" />
+          <button class="carrossel-seta" id="next"><i class="fas fa-chevron-right"></i></button>
+        </section>
+      </div>
+
+      <!-- Lightbox container -->
+      <div id="lightbox" class="lightbox">
+        <span class="lightbox-close"><i class="fas fa-times"></i></span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="ampliada" />
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        <i class="fas fa-copyright"></i> 2025 Avante Projectos & Construções Lda. Todos os direitos
+        reservados.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/avanteprojectos" target="_blank" title="Instagram">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a href="https://wa.me/258845912300" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Abrir lightbox ao clicar na imagem
+    document.querySelectorAll(".album-img").forEach((img) => {
+      img.addEventListener("click", function () {
+        document.getElementById("lightbox-img").src = this.src;
+        document.getElementById("lightbox").style.display = "flex";
       });
-      // Fechar lightbox ao clicar no X ou fora da imagem
-      document.querySelector(".lightbox-close").onclick = function () {
-        document.getElementById("lightbox").style.display = "none";
-      };
-      document.getElementById("lightbox").onclick = function (e) {
-        if (e.target === this) this.style.display = "none";
-      };
-    </script>
-  </body>
+    });
+    // Fechar lightbox ao clicar no X ou fora da imagem
+    document.querySelector(".lightbox-close").onclick = function () {
+      document.getElementById("lightbox").style.display = "none";
+    };
+    document.getElementById("lightbox").onclick = function (e) {
+      if (e.target === this) this.style.display = "none";
+    };
+
+    const imagens = [
+      "images/WhatsApp Image 2025-05-24 at 16.19.25_fd57c06c.jpg",
+      "images/WhatsApp Image 2025-05-24 at 16.19.28_e1f0dc4d.jpg",
+      "images/WhatsApp Image 2025-05-24 at 16.19.31_6c3d4654.jpg",
+    ];
+    let atual = 0;
+    const img = document.getElementById("carrossel-img");
+    document.getElementById("prev").onclick = function () {
+      atual = (atual - 1 + imagens.length) % imagens.length;
+      img.src = imagens[atual];
+    };
+    document.getElementById("next").onclick = function () {
+      atual = (atual + 1) % imagens.length;
+      img.src = imagens[atual];
+    };
+
+    // Adicionar evento de clique na imagem do carrossel
+    img.addEventListener("click", function () {
+      document.getElementById("lightbox-img").src = this.src;
+      document.getElementById("lightbox").style.display = "flex";
+    });
+  </script>
+</body>
+
 </html>
